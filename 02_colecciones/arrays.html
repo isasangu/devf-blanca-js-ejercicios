@@ -7,12 +7,115 @@
 </head>
 <body>
   <h1> Arreglos </h1>
+  <!--Para no estar siempre en la consola creo este id -->
 
+  <div id="resultado"></div>
+
+ <!-- 6.creamos un select -->
+ <label for ="seleccion"> Ecoge tu arma: </label>
+
+ <select name="seleccion" id="seleccion">
+   <option value="piedra">Piedra </option>
+   <option value="piedra">Papel </option>
+   <option value="piedra">Tijeras </option>
+ </select>
+
+ <button onclick ="jugar();">
+   Jugar
+ </button>
   <script>
+  function jugar(){
+  //  1 Hacemos una variable tipo array
+  //Jugaremos piedra, papel o tijera
+  var items= ["piedra", "papel", "tijera"];
 
-    // Hola Héctor!! Esta línea escribió Brian.
-    "esto debe ser un conflicto"
+  //¿Cómo accedemos a ellos?
+  //Con los índices 0, 1 , 2
+  // Hacemos que nos muestre qué trae cada elemento
+  //console.log(items[0])
+  // Al correrlo en la consola aparece piedra
+  //Si le damos un valor que no existe como 100 aparecerá undefined
+//7.
+//var seleccion_maquina = items[0];//
+var seleccion_maquina = maquina_escoge(items);
+var seleccion_jugador = document.querySelector("#seleccion").value;
 
+
+// DICCIONARIOS///
+// Ayuda para escibir código más entendible//
+
+// Las reglas estan compuestas por 2, contra quien gana y con quien pierde
+var reglas = {
+  piedra: {papel: "pierdes :(())", tijeras:"ganas"},
+  papel: {tijeras:"pierdes", piedra: "ganas"},
+  tijeras: {pierde:"piedra", gana:"papel"}
+}
+var ganador = definir_ganador(seleccion_jugador, seleccion_maquina, reglas);
+dibujar(ganador);
+}
+
+function definir_ganador(s_jugador, s_maquina, reglas){
+
+  // defino ganador condicional
+  //if(seleccion_maquina == "piedra"){
+    //var resultado
+    if(s_maquina == s_jugador){
+      //resultado= "empate";
+      return "empate;"
+    }
+
+    var regla = reglas [s_maquina];
+    //return ganador_sencillo(s_jugador, regla["gana"], regla["pierde"]);
+    return regla[s_maquina];
+  }
+
+  function
+  //function ganador_sencillo(s_jugador, gana, pierde){
+    //if(s_jugador == pierde){
+      //return "Ganaste";
+    //}else{
+      //return "perdiste"
+  function dibujar(valor){
+    document.querySelector("#")
+  }
+    }
+  }
+  //  if (s_maquina =="piedra"){}
+    //if (s_jugador =="papel"){
+      //resultado = "Has ganado"
+    //}else if (s_jugador =="tijeras") {
+    //  resultado ="has perdido"
+    //}
+  //}else if (s_maquina =="papel"){
+    //if (s_jugador == "tijeras"){
+      //resultado = "Has ganado"
+    //}else if (s_jugador =="piedra"{
+      //resultado ="has perdido"
+    //}
+  //}else if (s_maquina =="tijeras"){
+    //if (s_jugador =="piedra"){
+      //resultado ="has ganado"
+    //} else if (s_jugador =="papel"){
+      //resultado ="Has perdido"
+    //}
+  //}
+
+    //return resultado
+//}
+
+//completar la lógica
+// el resultado debe de ser  jugador o amquina
+
+ //5.
+
+ //dibujar(items[1]);
+ //dibujar (items [2]);
+ //dibujar("asdjaks")
+  //4. Para hacer más limpio 3 hacemos una función
+  //function dibujar(valor){
+    //document.querySelector("#resultado").innerHTML = valor;
+  //}
+    // Hola Héctor!! Esta línea escrib
   </script>
 </body>
 </html>
