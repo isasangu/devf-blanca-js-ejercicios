@@ -10,16 +10,29 @@
     <div class="formulario">
       Mínimo: <input type="text" name="minimo" id="minimo"><br />
       Máximo: <input type="text" name="maximo" id="maximo"><br />
-      <button onclick="dibujar_tabla();">Dibujar Tabla!</button>
+      <button onclick="dibujar_tabla();">Dibujar Tabla!</button>∫
       <div id="resultado"></div>
     </div>
     <script>
 
         function dibujar_tabla() {
+
+          var minimo=document.querySelector("#minimo").value;
+          var maximo=document.querySelector("#maximo").value;
+
+          resultado.innerHTML="";
           /*
             Ejercicio: Leer minimo y maximo de la pagina, y dibujar una
             tabla con los productos de todos los numeros entre minimo y maximo.
            */
+           for(var i= 1; i<= minimo; i++){
+             for (var j=1 ; j<= maximo; j++){
+               resultado.innerHTML +="minimo:" +i;
+               resultado.innerHTML += "maximo:" +j;
+               resultado.innerHTML += "RESULTADO:"+(i*j)+"<br>";
+             }
+
+           }
         }
 
     </script>
